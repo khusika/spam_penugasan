@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Atribut RAJA BRAWIJAYA 2017</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:900,400|Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+</head>
+	<body>
+		<div class="container">
+			<header id="header" class="codrops-header">
+				<h1>PANDUAN MABA RAJA BRAWIJAYA 2017</h1>
+				<span class="message"></span>
+				<button class="slider-switch"</button>
+			</header>
+			<div id="overlay" class="overlay">
+				<div class="info">
+					<h2>Kerjakan sendiri tugas dengan baik dan benar ya... ;)</h2>
+					<p>Geser kiri/kanan untuk melihat penugasan.</P>
+					<button>iya, saya mengerti.</button>
+				</div>
+			</div>
+			<div id="slideshow" class="dragslider">
+				<section class="img-dragger img-dragger-large dragdealer">
+					<div class="handle">
+						<div class="slide" data-content="content-1">
+							<h2><center>&#8594;</br>ATRIBUT</center><span></br><center>Atribut yang harus dipakai.</center></span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-2">
+							<div class="img-wrap"></div>
+							<h2><center>&#8592;  &#8594;</br> BARANG BAWAAN</center><span></br><center>Barang - barang yang harus dibawa.</center></span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-3">
+							<div class="img-wrap"></div>
+							<h2><center>&#8592;</br> TUGAS MABA</center><span></br><center>Tugas yang harus diselesaikan.</center></span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+					</div>
+				</section><!-- /img-dragger-->
+				<!-- Content section -->
+				<section class="pages">
+					<div class="content" data-content="content-1">
+						<h2>ATRIBUT</h2>
+						<p>COMING SOON</p>
+					</div>
+					<div class="content" data-content="content-2">
+						<h2>BARANG BAWAAN</h2>
+						<p>COMING SOON</p>
+					</div>
+					<div class="content" data-content="content-3">
+						<h2>TUGAS MABA</h2>
+						<p>COMING SOON</p>
+					</div>
+				</section>
+			</div>
+		</div><!-- /container -->
+		<script src="js/dragdealer.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/dragslideshow.js"></script>
+		<script>
+			(function() {
+
+				var overlay = document.getElementById( 'overlay' ),
+					overlayClose = overlay.querySelector( 'button' ),
+					header = document.getElementById( 'header' )
+					switchBtnn = header.querySelector( 'button.slider-switch' ),
+					toggleBtnn = function() {
+						if( slideshow.isFullscreen ) {
+							classie.add( switchBtnn, 'view-maxi' );
+						}
+						else {
+							classie.remove( switchBtnn, 'view-maxi' );
+						}
+					},
+					toggleCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.add( header, 'hide' );
+						}
+					},
+					toggleCompleteCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.remove( header, 'hide' );
+						}
+					},
+					slideshow = new DragSlideshow( document.getElementById( 'slideshow' ), {
+						// toggle between fullscreen and minimized slideshow
+						onToggle : toggleBtnn,
+						// toggle the main image and the content view
+						onToggleContent : toggleCtrls,
+						// toggle the main image and the content view (triggered after the animation ends)
+						onToggleContentComplete : toggleCompleteCtrls
+					}),
+					toggleSlideshow = function() {
+						slideshow.toggle();
+						toggleBtnn();
+					},
+					closeOverlay = function() {
+						classie.add( overlay, 'hide' );
+					};
+
+				// toggle between fullscreen and small slideshow
+				switchBtnn.addEventListener( 'click', toggleSlideshow );
+				// close overlay
+				overlayClose.addEventListener( 'click', closeOverlay );
+
+			}());
+		</script>
+	</body>
+</html>
