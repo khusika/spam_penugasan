@@ -11,7 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/atribut.css" />
+	<script src="js/modernizr.custom.js"></script>
 </head>
 	<body>
 		<div class="container">
@@ -49,8 +50,9 @@
 				<!-- Content section -->
 				<section class="pages">
 					<div class="content" data-content="content-1">
-						<h2>ATRIBUT</h2>
-						<p>COMING SOON</p>
+						<ul id="glasscase" class="gc-start">
+								<li><img src="http://www.pngall.com/wp-content/uploads/2016/03/Smartphone-Transparent.png" alt="Text" data-gc-caption="Your caption text" /></li>
+						</ul>
 					</div>
 					<div class="content" data-content="content-2">
 						<h2>BARANG BAWAAN</h2>
@@ -66,6 +68,12 @@
 		<script src="js/dragdealer.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/dragslideshow.js"></script>
+		<script src="js/atribut.js"></script>
+		<script type="text/javascript">
+			$(document).ready( function () {
+				$('#glasscase').glassCase({ 'thumbsPosition': 'bottom', 'widthDisplay' : 560});
+			});
+    </script>
 		<script>
 			(function() {
 
